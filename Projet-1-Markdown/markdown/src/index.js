@@ -5,6 +5,8 @@ import './style/css/bootstrap.min.css';
 import './index.css';
 // JS
 import { sampleText } from './sampleText';
+// Marked.js
+import marked from 'marked';
 
 class App extends React.Component {
 
@@ -16,6 +18,11 @@ class App extends React.Component {
     const text = event.target.value;
     this.setState({ text });
   };
+
+  markedText = (text) => {
+    const markedText = marked(text, {sanitize: true});
+    return { __html: markedText};
+  }
 
   render() {
     return (
@@ -33,7 +40,7 @@ class App extends React.Component {
 
           <div className="col-xs-6">
             <h1>Résultat :</h1>
-            <p>{this.state.text}</p>
+            <div dangerouslySetInnerHTML={this.markedText(this.state.text)} />
           </div>
 
         </div>
