@@ -190,7 +190,17 @@ button:disabled {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-direction: column;
 	min-height: 100vh;
 	margin: 0;
 	background: #eceff1;
+	text-align: center;
+}
+
+.notFound a {
+	display: block;
+	padding: 8px 12px;
+	background: #2196F3;
+	text-decoration: none;
+	color: white;
 }

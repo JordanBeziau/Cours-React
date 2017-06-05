@@ -5,7 +5,7 @@ class Message extends React.Component {
     return (
       <div className="message">
         <p className="user-message">
-          Hello World !
+          {this.props.pseudo} : Hello World !
         </p>
       </div>
     )
