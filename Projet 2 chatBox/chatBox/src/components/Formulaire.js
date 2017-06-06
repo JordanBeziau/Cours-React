@@ -3,7 +3,9 @@ import React from 'react';
 class Formulaire extends React.Component {
   render() {
     return (
-      <form className="form">
+      <form className="form"
+        onSubmit={e => {this.sendMessage(e)}}
+      >
         <textarea required maxLength="140"></textarea>
         <div className="info">140</div>
         <button type="submit">Envoyer</button>
