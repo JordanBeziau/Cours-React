@@ -6,7 +6,6 @@ import CreateContact from './CreateContact'
 
 class App extends Component {
   state = {
-    screen: 'list', // list or create
     contacts : [ ]
   }
 
@@ -29,7 +28,6 @@ class App extends Component {
           <ListContacts
             onRemoveContact={this.removeContact}
             contacts={this.state.contacts}
-            onNavigate={ () => this.setState({ screen: 'create' }) }
           />
         ) } />
         <Route path="/create" component={ CreateContact } />
